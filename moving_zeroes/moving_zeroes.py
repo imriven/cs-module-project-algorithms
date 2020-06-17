@@ -16,7 +16,6 @@ Returns: a List of integers
 
 #Thursday
 
-
 def moving_zeroes(arr):
     non_zero = 0
     for i in range(0, len(arr)):
