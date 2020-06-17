@@ -5,14 +5,29 @@ from functools import reduce
 Input: a List of integers
 Returns: a List of integers
 '''
-def product_of_all_other_numbers(arr):
-    result =  []
-    for i, num in enumerate(arr):
-       arr2 = arr.copy()
-       arr2.pop(i)
-       result.append(reduce(mul, arr2, 1))
-    return result
+#Wednesday
+
+# def product_of_all_other_numbers(arr):
+#     result =  []
+#     for i, num in enumerate(arr):
+#        arr2 = arr.copy()
+#        arr2.pop(i)
+#        result.append(reduce(mul, arr2, 1))
+#     return result
             
+#Thusday
+
+def product_of_all_other_numbers(arr):
+    length = len(arr)
+    result = [0] * length
+    result[0] = 1
+    for i in range(1, length):
+        result[i] = arr[i - 1] * result[i - 1]
+    right = 1
+    for i in reversed(range(length)):
+        result[i] = result[i] * right
+        right *= arr[i]
+    return result
 
 
 

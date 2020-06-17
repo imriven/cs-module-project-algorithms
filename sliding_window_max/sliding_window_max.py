@@ -2,6 +2,17 @@
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
 '''
+#WENESDAY
+
+# def sliding_window_max(nums, k):
+#     results = []
+#     for i, num in enumerate(nums):
+#         if i + k <= len(nums):
+#             results.append(max(nums[i:i + k]))
+#     return results
+
+ #THURSDAY
+
 def sliding_window_max(nums, k):
     results = []
     for i, num in enumerate(nums):
