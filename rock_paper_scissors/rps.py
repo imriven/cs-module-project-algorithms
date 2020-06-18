@@ -3,9 +3,21 @@
 import sys
 
 def rock_paper_scissors(n):
-  # Your code here
+  options = ["rock", "paper", "scissors"]
+  results = []
 
-  pass
+  def generate_hands(rounds_left, played_rounds=None):
+    if not played_rounds:
+      played_rounds = []
+    if rounds_left == 0:
+      results.append(played_rounds)
+    else:
+      for o in options:
+        generate_hands(rounds_left - 1, [*played_rounds, o])
+
+  generate_hands(n)
+
+  return results 
 
 
 if __name__ == "__main__":
